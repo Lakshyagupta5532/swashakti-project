@@ -32,12 +32,15 @@
   <h1>🌸 Swashakti</h1>
   <button class="nav-toggle" aria-label="menu" onclick="toggleNav()">&#9776;</button>
   <nav id="mainNav">
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="login.html">Login</a>
-    <a href="register.html">Register</a>
-    <a href="order_history.html">Order History</a>
-  </nav>
+  <a href="index.html">Home</a>
+  <a href="products.html">Products</a>
+  <a href="login.html" id="loginButton">Login</a>
+  <a href="register.html" id="registerButton">Register</a>
+  <a href="order_history.html">Order History</a>
+  <a href="#" id="logoutButton" style="display:none;">Logout</a>
+</nav>
+
+
 </header>
 
 
@@ -212,6 +215,7 @@
     };
   });
   </script>
+  <script src="script.js"></script>
   <script>
 function toggleNav() {
   var nav = document.getElementById('mainNav');

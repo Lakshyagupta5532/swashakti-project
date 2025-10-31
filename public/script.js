@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // --- Floating Help Icon open modal ---
+  // Floating Help Icon
   var icon = document.getElementById('floatingHelpIcon');
   var modal = document.getElementById('helpModal');
   var closeBtn = document.getElementById('closeHelpModal');
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     closeBtn.onclick = function() { modal.style.display = 'none'; }
   }
 
-  // --- REGISTER ---
+  // REGISTER
   const registerForm = document.getElementById('registerForm');
   if (registerForm) {
     registerForm.addEventListener('submit', async (e) => {
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // --- LOGIN ---
+  // LOGIN
   const loginForm = document.getElementById('loginForm');
   if (loginForm) {
     loginForm.addEventListener('submit', async (e) => {
@@ -47,13 +47,14 @@ document.addEventListener('DOMContentLoaded', function() {
       const data = await res.json();
       alert(data.message || data.error);
       if (!data.error) {
+        localStorage.setItem('userLoggedIn', 'true');
         localStorage.setItem('user', JSON.stringify(data.user));
         window.location.href = 'index.html';
       }
     });
   }
 
-  // --- PRODUCT UPLOAD ---
+  // PRODUCT UPLOAD
   const productUploadForm = document.getElementById('productUploadForm');
   if (productUploadForm) {
     productUploadForm.addEventListener('submit', async function(e) {
@@ -75,4 +76,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // LOGOUT BUTTON
+const logoutBtn = document.getElementById('logoutButton');
+
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', function(e) {
+      e.preventDefault(); // Important line: browser ko link follow karne se roke
+      localStorage.removeItem('userLoggedIn');
+      localStorage.removeItem('user');
+      window.location.href = 'index.html';
+    });
+  }
+
+  // SHOW/HIDE NAV BUTTONS
+  const loginBtn = document.getElementById('loginButton');
+  const registerBtn = document.getElementById('registerButton');
+  const userLoggedIn = localStorage.getItem('userLoggedIn');
+
+  if(userLoggedIn === 'true') {
+    if(loginBtn) loginBtn.style.display = 'none';
+    if(registerBtn) registerBtn.style.display = 'none';
+    if(logoutBtn) logoutBtn.style.display = 'inline-block';
+  } else {
+    if(loginBtn) loginBtn.style.display = 'inline-block';
+    if(registerBtn) registerBtn.style.display = 'inline-block';
+    if(logoutBtn) logoutBtn.style.display = 'none';
+  }
 });
