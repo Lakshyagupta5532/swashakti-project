@@ -43,44 +43,59 @@ This project covers user registration, login, product uploads, cart management, 
 
 
 
-## How to Run Locally
 
-1. Clone the repo:
+## How to Run Locally (Step-by-step)
 
-git clone https://github.com/Lakshyagupta5532/swashakti-project.git
+1. Download the project code to your computer
+   - Open your command prompt or terminal.
+   - Type this command and press enter:
+     ```
+     git clone https://github.com/Lakshyagupta5532/swashakti-project.git
+     ```
+   - This will copy the whole project into a folder on your computer.
 
-2. Navigate to project directory:
+2. Go inside this project folder
+   - Type this command and press enter:
+     ```
+     cd swashakti-project
+     ```
+   - Now you are inside the project folder.
 
-cd swashakti-project
+3. Install required software packages
+   - Type and press enter:
+     ```
+     npm install
+     ```
+   - This installs all the required software libraries the project needs to run.
 
-3. Install dependencies:
+4. Start the project server
+   - Type and press enter:
+     ```
+     node public/server.js
+     ```
+   - This will start the backend server on your computer.
 
-npm install
-
-4. Start the server:
-
-node public/server.js
-
-5. Open browser and go to:
-
-http://localhost:5000
-
+5. Open your web browser
+   - Open Chrome, Firefox, Edge, or any browser.
+   - In the address bar at the top, type:
+     ```
+     http://localhost:5000
+     ```
+   - You’ll see your project running like a website.
 
 ## Usage
-
-- Register a new user to start shopping.
-- Browse products and add them to your cart.
-- Manage orders and view order history.
+- Register as a new user to start shopping.
+- Browse and add products to your cart.
+- Manage your orders and view your order history.
 
 ## Contribution
-
-All contributions and pull requests are welcome! Please ensure code quality and documentation are maintained.
+You’re welcome to fork the project and create your own enhancements. Please keep the code clean and add useful comments.
 
 ## License
-
 This project is open for educational and personal use.
 
 ---
 
-*Created with assistance from an AI helper.*
+
+
 
