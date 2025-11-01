@@ -1,11 +1,12 @@
 import mysql from 'mysql2';
 
-// Database connection setup
+// Database connection setup (Railway variables)
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',        // yahan apna MySQL username daal
-  password: 'lapalap@5532', // yahan apna MySQL password daal
-  database: 'swashakti_db'
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT || 3306
 });
 
 // Connect the database
@@ -18,4 +19,3 @@ db.connect((err) => {
 });
 
 export default db;
-  
